@@ -8,7 +8,7 @@ Cucumber 2.4.0
 
 ## Arquivo de configuracoes do projeto ###################################################
 ##
-## Marllon de Souza Pereira - 26/07/2018 - Inmetrics
+## Marllon de Souza Pereira - 26/07/2018 
 ## Versão 1.00
 ##
 ##########################################################################################
