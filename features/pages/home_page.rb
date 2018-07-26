@@ -18,5 +18,10 @@
         
           def set_product_search
               self.input_search.set("printed")
-          end    
+          end 
+          
+          def wait_element_visible(element)
+            find(element, :visible => true, wait: 20)
+          end   
+
     end

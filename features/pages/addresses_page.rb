@@ -3,7 +3,8 @@
 
     class Addresses < SitePrism::Page
 
-          element :btn_checkout, '.button-medium'            
+          element :btn_checkout, '.button-medium'
+          element :input_street, '#address_delivery'            
 
           def click_btn_proceed_checkout
               self.btn_checkout.click
