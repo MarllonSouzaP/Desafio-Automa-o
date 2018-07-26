@@ -58,7 +58,7 @@ Before do |feature|
   end
 
   @home_page = Home.new
-  @carrinho_page = Car.new
+  @car_page = Car.new
   @authent_page = Authentication.new
   @create_page  = CreateAccount.new
   @shopping_page = Shopping.new

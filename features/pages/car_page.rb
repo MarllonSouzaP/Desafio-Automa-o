@@ -22,5 +22,12 @@
           def click_btn_checkout
               self.btn_checkout.click
           end 
+
+          def validate_product_car
+            aggregate_failures do
+                expect($valor_produto).to eql find(:css, '#total_product').text
+                expect($quantidade_produto).to eql find(:css, '.cart_quantity_input').value
+            end
+          end  
     end
 

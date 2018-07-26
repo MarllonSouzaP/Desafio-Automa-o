@@ -14,20 +14,17 @@ Dado(/^que acesso clico no botão pesquisar e seleciono um produto$/) do
 end
   
 Dado(/^adiciono o produto no carrinho$/) do
-    @carrinho_page.click_first_result
+    @car_page.click_first_result
     sleep 2
-    @carrinho_page.save_values
-    @carrinho_page.click_add_car
+    @car_page.save_values
+    @car_page.click_add_car
     sleep 2
-    @carrinho_page.click_btn_checkout
+    @car_page.click_btn_checkout
 end
  
 Dado(/^valido os dados do produto no carrinho$/) do
     sleep 2
-     aggregate_failures do
-        expect($valor_produto).to eql find(:css, '#total_product').text
-        expect($quantidade_produto).to eql find(:css, '.cart_quantity_input').value
-      end
+     @car_page.validate_product_car
      @shopping_page.click_btn_proceed_checkout
 end
     
@@ -40,7 +37,8 @@ Dado(/^realizo o cadastro de clientes$/) do
     @create_page.click_button_register      
 end
 
-Dado(/^valido o endereço e o valor da compra$/) do
+Dado(/^valido o endereço e o valor da compra$/) do 
+    @addresses_page.validate_address
     @addresses_page.click_btn_proceed_checkout
     sleep 2
     @shipping_page.check_term

@@ -82,38 +82,47 @@
 
           def set_street_name
               self.input_firstname.set(Faker::Address.street_name) if has_input_firstname?
+              $street_name = self.input_firstname.value
           end
 
           def set_lat_namest
               self.input_lastname.set(Faker::Address.city_suffix) if has_input_lastname?
+              $last_name = self.input_lastname.value              
           end
 
           def set_address
               self.input_address1.set(Faker::Address.street_suffix) if has_input_address1?
+              $address = self.input_address1.value                            
           end
             
           def set_city
               self.input_city.set(Faker::Address.city) if has_input_city?
+              $city = self.input_city.value                                          
           end
          
           def setState 
               if find(:css, '#uniform-id_state').find("option[value='11']").visible?
                  find(:css, '#uniform-id_state').find("option[value='11']").click
+                 $state = find(:css, '#uniform-id_state').find("option[value='11']").text
               end                
           end    
             
           def set_zip_code
               self.input_postcode.set("00000") if has_input_postcode?
+              $post_code = self.input_postcode.value                                                        
           end
 
           def select_country 
               if find(:css, '#uniform-id_country').find("option[value='21']").visible?  
                  find(:css, '#uniform-id_country').find("option[value='21']").click
+                 $country = find(:css, '#uniform-id_country').find("option[value='21']").text
+                 
               end    
           end    
 
           def set_mobile_phone
               self.input_phone_mobile.set(Faker::PhoneNumber.cell_phone) if has_input_phone_mobile?
+              $cell_phone = self.input_phone_mobile.value                                                                      
           end
 
           def set_alias
@@ -122,7 +131,13 @@
 
           def click_button_register
               self.btn_register.click
-          end    
+          end 
+          
+          def validar_endereco_entrega
+
+          end  
+
+
 
     end
 
